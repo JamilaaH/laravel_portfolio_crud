@@ -26,9 +26,9 @@
                     <div class="portfolio-wrap">
                         <img src={{asset('img/portfolio/portfolio-1.jpg')}} class="img-fluid" alt="">
                         <div class="portfolio-links">
-                            <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox"
+                            <a href={{asset('img/portfolio/portfolio-1.jpg')}} data-gall="portfolioGallery" class="venobox"
                                 title="App 1"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
