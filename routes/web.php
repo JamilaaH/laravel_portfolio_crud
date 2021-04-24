@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +53,23 @@ Route::put('/admin/fact/{id}/update', [FactController::class, 'update'])->name('
 
     //show
 Route::get('/admin/fact/{id}', [FactController::class, "show"])->name('fact.show');
+
+
+//skill
+    //create
+    Route::get('/admin/skill/create', [SkillController::class, "create"])->name('skill.create');
+    Route::post('/admin/skill/store', [SkillController::class, "store"])->name('skill.store');
+    
+        //delete
+    Route::delete('/admin/skill/{id}/delete',[SkillController::class, "destroy"])->name('skill.destroy');
+    
+        //edit - update
+    Route::get('/admin/skill/{id}/edit', [SkillController::class, 'edit'])->name('skill.edit');
+    Route::put('/admin/skill/{id}/update', [SkillController::class, 'update'])->name('skill.update');
+    
+        //show
+    Route::get('/admin/skill/{id}', [SkillController::class, "show"])->name('skill.show');
+    
 
 //portfolio
     //create
