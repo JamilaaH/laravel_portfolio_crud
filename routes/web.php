@@ -1,12 +1,8 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FactController;
 use App\Http\Controllers\HomeController;
-use App\Models\About;
-use App\Models\Fact;
-use App\Models\Portfolio;
-use App\Models\Service;
-use App\Models\Skill;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +36,18 @@ Route::put('/admin/about/{id}/update', [AboutController::class, 'update'])->name
 
     //show
 Route::get('/admin/about/{id}', [AboutController::class, "show"])->name('about.show');
+
+//fact
+    //create
+Route::get('/admin/fact/create', [FactController::class, "create"])->name('fact.create');
+Route::post('/admin/fact/store', [FactController::class, "store"])->name('fact.store');
+
+    //delete
+Route::delete('/admin/fact/{id}/delete',[FactController::class, "destroy"])->name('fact.destroy');
+
+    //edit - update
+Route::get('/admin/fact/{id}/edit', [FactController::class, 'edit'])->name('fact.edit');
+Route::put('/admin/fact/{id}/update', [FactController::class, 'update'])->name('fact.update');
+
+    //show
+Route::get('/admin/fact/{id}', [FactController::class, "show"])->name('fact.show');
