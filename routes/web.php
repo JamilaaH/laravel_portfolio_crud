@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,3 +52,18 @@ Route::put('/admin/fact/{id}/update', [FactController::class, 'update'])->name('
 
     //show
 Route::get('/admin/fact/{id}', [FactController::class, "show"])->name('fact.show');
+
+//portfolio
+    //create
+Route::get('/admin/portfolio/create', [PortfolioController::class, "create"])->name('portfolio.create');
+Route::post('/admin/portfolio/store', [PortfolioController::class, "store"])->name('portfolio.store');
+
+    //delete
+Route::delete('/admin/portfolio/{id}/delete',[PortfolioController::class, "destroy"])->name('portfolio.destroy');
+
+    //edit - update
+Route::get('/admin/portfolio/{id}/edit', [PortfolioController::class, 'edit'])->name('portfolio.edit');
+Route::put('/admin/portfolio/{id}/update', [PortfolioController::class, 'update'])->name('portfolio.update');
+
+    //show
+Route::get('/admin/portfolio/{id}', [PortfolioController::class, "show"])->name('portfolio.show');
