@@ -28,4 +28,22 @@ class HomeController extends Controller
         $services = Service::all();
         return view('home', compact('about',"facts", 'skills', 'portfolios', 'services'));
     }
+
+    public function admin(){
+        //about
+        $about = About::all();
+
+        //fact
+        $facts = Fact::all();
+
+        //skill
+        $skills = Skill::all();
+
+        //portfolio
+        $portfolios = Portfolio::all();
+
+        //service
+        $services = Service::all();
+        return view('backoffice.admin', compact('about',"facts", 'skills', 'portfolios', 'services'));
+    }
 }

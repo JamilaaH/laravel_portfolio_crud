@@ -15,6 +15,8 @@ class CreateAboutTable extends Migration
     {
         Schema::create('about', function (Blueprint $table) {
             $table->id();
+            $table->string('nom', 100);
+            $table->string('prenom', 100);
             $table->string('titre', 100);
             $table->string('description', 200);
             $table->date('birthday');
