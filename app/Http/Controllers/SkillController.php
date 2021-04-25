@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class SkillController extends Controller
 {
+    public function index(){
+        $skills = Skill::all();
+        return view('backoffice.skill.indexSkill',compact('skills'));
+    }
+
     public function create(){
         return view('backoffice.skill.createSkill');
     }
@@ -23,13 +28,13 @@ class SkillController extends Controller
         $skill->titre = $request->titre;
         $skill->value = $request->value;
         $skill->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('skill.index');
     }
 
     //delete
     public function destroy(Skill $id){
         $id->delete();
-        return redirect()->route('admin.index');
+        return redirect()->route('skill.index');
     }
 
     //edit
@@ -50,7 +55,7 @@ class SkillController extends Controller
         $skill->titre = $request->titre;
         $skill->value = $request->value;
         $skill->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('skill.index');
     }
 
     //show

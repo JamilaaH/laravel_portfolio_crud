@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
+    public function index(){
+        $about = About::all();
+        return view('backoffice.about.indexAbout',compact('about'));
+    }
     public function create(){
         return view('backoffice.about.createAbout');
     }
@@ -43,13 +47,13 @@ class AboutController extends Controller
         $about->email = $request->email;
         $about->statut = $request->statut;
         $about->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('about.index');
     }
 
     //delete
     public function destroy(About $id){
         $id->delete();
-        return redirect()->route('admin.index');
+        return redirect()->route('about.index');
     }
 
     //edit
@@ -89,7 +93,7 @@ class AboutController extends Controller
         $about->email = $request->email;
         $about->statut = $request->statut;
         $about->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('about.index');
     }
 
     //show

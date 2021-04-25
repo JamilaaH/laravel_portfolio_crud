@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
+    public function index(){
+        $portfolios = Portfolio::all();
+        return view('backoffice.portfolio.indexPortfolio',compact('portfolios'));
+    }
+
     public function create(){
         return view('backoffice.portfolio.createPortfolio');
     }
@@ -25,13 +30,13 @@ class PortfolioController extends Controller
         $portfolio->lien = $request->lien;
         $portfolio->titre = $request->titre;
         $portfolio->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('portfolio.index');
     }
 
     //delete
     public function destroy(Portfolio $id){
         $id->delete();
-        return redirect()->route('admin.index');
+        return redirect()->route('portfolio.index');
     }
 
     //edit
@@ -54,7 +59,7 @@ class PortfolioController extends Controller
         $portfolio->lien = $request->lien;
         $portfolio->titre = $request->titre;
         $portfolio->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('portfolio.index');
     }
 
     //show

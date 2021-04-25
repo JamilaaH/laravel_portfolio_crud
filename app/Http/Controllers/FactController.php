@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class FactController extends Controller
 {
+    public function index(){
+        $facts = Fact::all();
+        return view('backoffice.fact.indexFact',compact('facts'));
+    }
+
     public function create(){
         return view('backoffice.fact.createFact');
     }
@@ -25,13 +30,13 @@ class FactController extends Controller
         $fact->count = $request->count;
         $fact->description = $request->description;
         $fact->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('fact.index');
     }
 
     //delete
     public function destroy(Fact $id){
         $id->delete();
-        return redirect()->route('admin.index');
+        return redirect()->route('fact.index');
     }
 
     //edit
@@ -54,7 +59,7 @@ class FactController extends Controller
         $fact->count = $request->count;
         $fact->description = $request->description;
         $fact->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('fact.index');
     }
 
     //show
