@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailboxController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
@@ -109,3 +110,11 @@ Route::get('/admin/service/', [ServiceController::class, "index"])->name('servic
     
         //show
     Route::get('/admin/service/{id}', [ServiceController::class, "show"])->name('service.show');
+
+
+//contact
+Route::get('/admin/mail', [MailboxController::class, "index"])->name('mail.index');
+//store
+Route::post('/mailbox', [MailboxController::class, "store"])->name('mail.store');
+//destroy
+Route::delete('/mailbox/{id}', [MailboxController::class, "destroy"])->name('mail.destroy');

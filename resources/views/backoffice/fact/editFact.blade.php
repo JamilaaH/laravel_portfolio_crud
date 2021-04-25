@@ -5,6 +5,7 @@
     @include('partial.bo.navAdmin')
     <div class="container">
         <h3 class="text-center">Modifier {{$fact->nom}}</h3>
+        <a href={{route('fact.index')}}>Back Facts</a>
         <form action={{route('fact.update', $fact->id)}} method="post" class="w-75 mx-auto">
             @csrf
             @method('PUT')

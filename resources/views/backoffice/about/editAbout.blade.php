@@ -5,12 +5,13 @@
     @include('partial.bo.navAdmin')
     <div class="container">
         <h3 class="text-center">Modifier {{$about->nom}}</h3>
+        <a href={{route('about.index')}} class="text-center">Back About</a>
         <form action={{route('about.update', $about->id)}} method="post" class="w-75 mx-auto">
             @csrf
             @method('PUT')
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control @error('nom') is-invalid @enderror" value="{{$about->nom}}" placeholder="Nom"
+                    <input type="text" class="form-control @error('nom') is-invalid @enderror" value="{{$about->nom}} {{ old('nom') }}" placeholder="Nom"
                         name="nom">
                     @error('nom')
                         <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>

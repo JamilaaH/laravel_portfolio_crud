@@ -16,19 +16,19 @@
                     <div class="address">
                         <i class="icofont-google-map"></i>
                         <h4>Location:</h4>
-                        <p>A108 Adam Street, New York, NY 535022</p>
+                        <p>{{$about[0]->city}}</p>
                     </div>
 
                     <div class="email">
                         <i class="icofont-envelope"></i>
                         <h4>Email:</h4>
-                        <p>info@example.com</p>
+                        <p>{{$about[0]->email}}</p>
                     </div>
 
                     <div class="phone">
                         <i class="icofont-phone"></i>
                         <h4>Call:</h4>
-                        <p>+1 5589 55488 55s</p>
+                        <p>{{$about[0]->phone}}</p>
                     </div>
 
                     <iframe
@@ -39,39 +39,47 @@
             </div>
 
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                @include('layouts.flash')
+                <form action={{route('mail.store')}} method="post" >
+                    @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="name">Your Name</label>
-                            <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4"
+                            <label for="nom">Your Name</label>
+                            <input type="text" name="nom" class="form-control @error('nom') is-invalid @enderror" id="nom" data-rule="minlen:4"
                                 data-msg="Please enter at least 4 chars" />
-                            <div class="validate"></div>
+                            @error('nom')
+                                <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                            @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="name">Your Email</label>
-                            <input type="email" class="form-control" name="email" id="email" data-rule="email"
+                            <label for="mail">Your Email</label>
+                            <input type="email" class="form-control @error('mail') is-invalid @enderror" name="mail" id="mail" data-rule="email"
                                 data-msg="Please enter a valid email" />
-                            <div class="validate"></div>
+                            @error('mail')
+                                <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                            @enderror
+
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name">Subject</label>
-                        <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4"
+                        <label for="sujet">Subject</label>
+                        <input type="text" class="form-control @error('sujet') is-invalid @enderror" name="sujet" id="sujet" data-rule="minlen:4"
                             data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validate"></div>
+                            @error('sujet')
+                                <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                            @enderror
+
                     </div>
                     <div class="form-group">
-                        <label for="name">Message</label>
-                        <textarea class="form-control" name="message" rows="10" data-rule="required"
+                        <label for="message">Message</label>
+                        <textarea class="form-control @error('message') is-invalid @enderror" name="message" rows="10" data-rule="required"
                             data-msg="Please write something for us"></textarea>
-                        <div class="validate"></div>
+                            @error('message')
+                                <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                            @enderror
+
                     </div>
-                    <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                    <div class="text-center"><button type="submit" class="btn btn-primary">Send Message</button></div>
                 </form>
             </div>
 

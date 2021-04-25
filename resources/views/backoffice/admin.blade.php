@@ -65,7 +65,7 @@
                                                 <h4>Mailbox</h4>
                                         </div>
                                         <div class="card-body">
-                                                <a class="btn btn-primary mx-auto" href="#">Tableau</a>
+                                                <a class="btn btn-primary mx-auto" href={{route('mail.index')}}>Tableau</a>
                                         </div>
                                 </div>
                         </div>

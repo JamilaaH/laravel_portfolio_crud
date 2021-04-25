@@ -5,6 +5,7 @@
     @include('partial.bo.navAdmin')
     <div class="container">
         <h3 class="text-center">Modifier {{$portfolio->nom}}</h3>
+        <a href={{route('portfolio.index')}}>Back Portfolio</a>
         <form action={{route('portfolio.update', $portfolio->id)}} method="post" class="w-75 mx-auto">
             @csrf
             @method('PUT')
