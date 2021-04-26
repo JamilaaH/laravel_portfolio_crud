@@ -88,7 +88,7 @@
 
             <div class="row my-2">
                 <div class="col-6">
-                    <input type="text" class="form-control @error('age') is-invalid @enderror" placeholder="age" name="age" value="{{ old('age') }}">
+                    <input type="number" class="form-control @error('age') is-invalid @enderror" placeholder="age" name="age" value="{{ old('age') }}">
                     @error('age')
                         <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                     @enderror

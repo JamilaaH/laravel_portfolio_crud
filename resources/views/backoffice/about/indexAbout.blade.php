@@ -10,10 +10,9 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">titre</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prenom</th>
                         <th scope="col">Birthday</th>
-                        <th scope="col">website</th>
                         <th scope="col">phone</th>
                         <th scope="col">city</th>
                         <th scope="col">age</th>
@@ -27,10 +26,9 @@
                     @foreach ($about as $item)
                         <tr>
                             <th scope="row">{{$item->id}}</th>
-                            <td>{{$item->titre}}</td>
-                            <td>{{$item->description}}</td>
+                            <td>{{$item->nom}}</td>
+                            <td>{{$item->prenom}}</td>
                             <td>{{$item->birthday}}</td>
-                            <td>{{$item->website}}</td>
                             <td>{{$item->phone}}</td>
                             <td>{{$item->city}}</td>
                             <td>{{$item->age}}</td>
@@ -46,6 +44,22 @@
                                     <button class="btn btn-danger mb-1">del</button>
                                 </form>
                             </td>
+                        </tr>                                                
+                    @endforeach
+                </tbody>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">titre</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($about as $item)
+                        <tr>
+                            <td>{{$item->titre}}</td>
+                            <td>{{$item->description}}</td>
                         </tr>                                                
                     @endforeach
                 </tbody>

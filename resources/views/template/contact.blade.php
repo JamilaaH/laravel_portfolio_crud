@@ -39,51 +39,53 @@
             </div>
 
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                @include('layouts.flash')
                 <form action={{route('mail.store')}} method="post" >
                     @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="nom">Your Name</label>
                             <input type="text" name="nom" class="form-control @error('nom') is-invalid @enderror" id="nom" data-rule="minlen:4"
-                                data-msg="Please enter at least 4 chars" />
+                            data-msg="Please enter at least 4 chars" />
                             @error('nom')
-                                <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                            <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label for="mail">Your Email</label>
                             <input type="email" class="form-control @error('mail') is-invalid @enderror" name="mail" id="mail" data-rule="email"
-                                data-msg="Please enter a valid email" />
+                            data-msg="Please enter a valid email" />
                             @error('mail')
-                                <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                            <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                             @enderror
-
+                            
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="sujet">Subject</label>
                         <input type="text" class="form-control @error('sujet') is-invalid @enderror" name="sujet" id="sujet" data-rule="minlen:4"
-                            data-msg="Please enter at least 8 chars of subject" />
+                        data-msg="Please enter at least 8 chars of subject" />
                             @error('sujet')
-                                <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                            <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                             @enderror
-
+                            
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea class="form-control @error('message') is-invalid @enderror" name="message" rows="10" data-rule="required"
                             data-msg="Please write something for us"></textarea>
                             @error('message')
-                                <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                            @enderror
-
+                            <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                            @enderror                            
                     </div>
+                    <div class="msg">
+                        @include('layouts.flash')
+                    </div>    
+    
                     <div class="text-center"><button type="submit" class="btn btn-primary">Send Message</button></div>
                 </form>
+                
             </div>
-
         </div>
-
+        
     </div>
 </section><!-- End Contact Section -->

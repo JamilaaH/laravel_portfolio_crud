@@ -26,7 +26,7 @@ class MailboxController extends Controller
         $mail->sujet = $request->sujet;
         $mail->message = $request->message;
         $mail->save();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Message bien envoyé');
     }
 
     public function destroy(Mailbox $id){

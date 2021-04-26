@@ -17,8 +17,9 @@
                     <p class="description">{{$service->description}}</p>
                 </div>                
             @endforeach
-
         </div>
-
+        <div class="d-flex justify-content-center">
+            {{$services->links(('pagination::bootstrap-4'))}}
+        </div>
     </div>
 </section><!-- End Services Section -->

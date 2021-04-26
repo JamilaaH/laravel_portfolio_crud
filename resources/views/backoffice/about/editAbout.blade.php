@@ -90,14 +90,16 @@
 
             <div class="row my-2">
                 <div class="col-6">
-                    <input type="text" class="form-control @error('age') is-invalid @enderror" value="{{$about->age}}" placeholder="age" name="age">
+                    <input type="number" class="form-control @error('age') is-invalid @enderror" value="{{$about->age}}" placeholder="age" name="age">
                     @error('age')
                         <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                     @enderror
                 </div>
             </div>
             <div class="form-group">
-                <textarea class="form-control  @error('description') is-invalid @enderror" name="description" value="{{$about->description}}" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control  @error('description') is-invalid @enderror" name="description" value="{{$about->description}}" id="exampleFormControlTextarea1" rows="3">
+                    {{$about->description}}
+                </textarea>
                 @error('description')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
