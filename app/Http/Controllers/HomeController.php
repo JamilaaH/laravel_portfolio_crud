@@ -26,7 +26,7 @@ class HomeController extends Controller
 
         //service
         // $services = Service::all();
-        $services = Service::paginate(4);
+        $services = Service::paginate(6);
         // $services->withPath('#services/');
         return view('home', compact('about',"facts", 'skills', 'portfolios', 'services'));
     }
