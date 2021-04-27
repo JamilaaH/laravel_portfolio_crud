@@ -18,7 +18,13 @@
             </div>
             <div class="form-group">
                 <label for="filter">Type de projet : </label>
-                <input type="text" class="form-control  @error('filter') is-invalid @enderror" id="filter" value="{{$portfolio->filter}}" name="filter">
+                <select class="form-control  @error('filter') is-invalid @enderror" id="filter" name="filter" value="{{$portfolio->filter}}" >
+                    <option value="card">Card</option>
+                    <option value="web">Web</option>
+                    <option value="app">App</option>
+                </select>
+
+                {{-- <input type="text" class="form-control  @error('filter') is-invalid @enderror" id="filter" value="{{$portfolio->filter}}" name="filter"> --}}
                 @error('filter')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror

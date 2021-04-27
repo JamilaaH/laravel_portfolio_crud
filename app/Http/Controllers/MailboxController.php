@@ -17,8 +17,7 @@ class MailboxController extends Controller
             "mail" => ["required", "email"],
             "sujet" => ["required"],
             "message" => ["required"],
-        ]);
-
+            ]);
 
         $mail = new Mailbox();
         $mail->nom = $request->nom;
@@ -26,7 +25,7 @@ class MailboxController extends Controller
         $mail->sujet = $request->sujet;
         $mail->message = $request->message;
         $mail->save();
-        return redirect()->back()->with('success', 'Message bien envoyé');
+        return redirect('/#contact')->with('success', 'Message bien envoyé');
     }
 
     public function destroy(Mailbox $id){

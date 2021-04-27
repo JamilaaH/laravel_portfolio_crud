@@ -51,7 +51,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">titre</th>
+                        <th scope="col">Titre</th>
                         <th scope="col">Description</th>
                     </tr>
                 </thead>

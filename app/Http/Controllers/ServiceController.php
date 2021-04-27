@@ -32,14 +32,14 @@ class ServiceController extends Controller
         $service->description = $request->description;
         $service->icon = $request->icon;
         $service->save();
-        return redirect()->route('service.index');
+        return redirect()->route('service.index')->with('success', 'nouveau service ajouté');
     }
 
     //delete
     public function destroy(Service $id)
     {
         $id->delete();
-        return redirect()->route('service.index');
+        return redirect()->route('service.index')->with('warning', 'un élément supprimé');
     }
 
     //edit
@@ -64,7 +64,7 @@ class ServiceController extends Controller
         $service->description = $request->description;
         $service->icon = $request->icon;
         $service->save();
-        return redirect()->route('service.index');
+        return redirect()->route('service.index')->with('success', 'service mis à jour');
     }
 
     //show

@@ -30,13 +30,13 @@ class PortfolioController extends Controller
         $portfolio->lien = $request->lien;
         $portfolio->titre = $request->titre;
         $portfolio->save();
-        return redirect()->route('portfolio.index');
+        return redirect()->route('portfolio.index')->with('success', 'nouveau projet rajouté');
     }
 
     //delete
     public function destroy(Portfolio $id){
         $id->delete();
-        return redirect()->route('portfolio.index');
+        return redirect()->route('portfolio.index')->with('warning', "un élément supprimé");
     }
 
     //edit
@@ -59,7 +59,7 @@ class PortfolioController extends Controller
         $portfolio->lien = $request->lien;
         $portfolio->titre = $request->titre;
         $portfolio->save();
-        return redirect()->route('portfolio.index');
+        return redirect()->route('portfolio.index')->with('success', 'projet bien édité');
     }
 
     //show

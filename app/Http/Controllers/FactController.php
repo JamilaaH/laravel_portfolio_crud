@@ -30,13 +30,13 @@ class FactController extends Controller
         $fact->count = $request->count;
         $fact->description = $request->description;
         $fact->save();
-        return redirect()->route('fact.index');
+        return redirect()->route('fact.index')->with('success', 'nouveau fait rajouté');
     }
 
     //delete
     public function destroy(Fact $id){
         $id->delete();
-        return redirect()->route('fact.index');
+        return redirect()->route('fact.index')->with('warning', "un élément supprimé");
     }
 
     //edit
@@ -59,7 +59,7 @@ class FactController extends Controller
         $fact->count = $request->count;
         $fact->description = $request->description;
         $fact->save();
-        return redirect()->route('fact.index');
+        return redirect()->route('fact.index')->with('succeess', 'fact mis à jour');
     }
 
     //show

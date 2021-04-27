@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class AboutSeeder extends Seeder
 {
@@ -21,7 +22,7 @@ class AboutSeeder extends Seeder
                 "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore
                 magna aliqua.",
-                "birthday" => "1995-05-1",
+                "birthday" => Carbon::create('1995', '05', '01'),
                 "website" => "www.example.com",
                 "phone" => 1234567890,
                 "city" => "New York, USA",

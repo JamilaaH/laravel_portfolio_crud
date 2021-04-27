@@ -1,11 +1,11 @@
 @extends('layouts.index')
 
-@include('layouts.flash')
 @section('content')
-    @include('partial.bo.navAdmin')
-    <section id="service">
-        <h3 class="text-center mb-3">Service</h3>
-        <div class="container">
+@include('partial.bo.navAdmin')
+<section id="service">
+    <h3 class="text-center mb-3">Service</h3>
+    <div class="container">
+            @include('layouts.flash')
             <a href={{route('admin.index')}}>Back Dashboard</a>
             <table class="table">
                 <thead>

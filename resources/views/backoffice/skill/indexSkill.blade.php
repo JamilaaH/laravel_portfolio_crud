@@ -5,6 +5,7 @@
     <section id="skill">
         <h3 class="text-center mb-3">Skills</h3>
         <div class="container">
+            @include('layouts.flash')
             <a href={{route('admin.index')}}>Back Dashboard</a>
             <table class="table">
                 <thead>

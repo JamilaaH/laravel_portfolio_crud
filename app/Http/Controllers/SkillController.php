@@ -28,13 +28,13 @@ class SkillController extends Controller
         $skill->titre = $request->titre;
         $skill->value = $request->value;
         $skill->save();
-        return redirect()->route('skill.index');
+        return redirect()->route('skill.index')->with('success', 'un nouveau skill ajouté');
     }
 
     //delete
     public function destroy(Skill $id){
         $id->delete();
-        return redirect()->route('skill.index');
+        return redirect()->route('skill.index')->with('warning', 'un élément supprimé');
     }
 
     //edit
@@ -55,7 +55,7 @@ class SkillController extends Controller
         $skill->titre = $request->titre;
         $skill->value = $request->value;
         $skill->save();
-        return redirect()->route('skill.index');
+        return redirect()->route('skill.index')->with('success', 'skill mis à jour');
     }
 
     //show

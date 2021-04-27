@@ -10,8 +10,9 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Date/Heure</th>
                         <th scope="col">Nom</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Mail</th>
                         <th scope="col">Sujet</th>
                         <th scope="col">Message</th>
                         <th scope="col">action</th>
@@ -21,6 +22,7 @@
                     @foreach ($mails as $item)
                         <tr>
                             <th scope="row">{{$item->id}}</th>
+                            <td>{{$item->created_at->format('d-M-Y h:i')}}</td>
                             <td>{{$item->nom}}</td>
                             <td>{{$item->mail}}</td>
                             <td>{{$item->sujet}}</td>

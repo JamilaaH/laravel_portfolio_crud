@@ -24,7 +24,7 @@
                         <div class="col-lg-6">
                             <ul>
                                 <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong>
-                                    {{ $about[0]->birthday }}</li>
+                                    {{ $about[0]->birthday}}</li>
                                 <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> {{ $about[0]->website }}
                                 </li>
                                 <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> {{ $about[0]->phone }}
