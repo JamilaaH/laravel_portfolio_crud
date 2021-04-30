@@ -5,7 +5,7 @@
     <div class="container">
         <h3 class="text-center">Modifier {{$portfolio->nom}}</h3>
         <a href={{route('portfolio.index')}}>Back Portfolio</a>
-        <form action={{route('portfolio.update', $portfolio->id)}} method="post" class="w-75 mx-auto">
+        <form action={{route('portfolio.update', $portfolio->id)}} method="post" class="w-75 mx-auto"  enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">

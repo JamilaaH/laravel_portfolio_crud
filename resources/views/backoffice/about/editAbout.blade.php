@@ -41,7 +41,7 @@
 
             <div class="row my-2">
                 <div class="col">
-                    <input type="date" class="form-control @error('birthday') is-invalid @enderror" value="{{$about->date}}" placeholder="date de naissance" name="birthday">
+                    <input type="date" class="form-control @error('birthday') is-invalid @enderror" value="{{$about->birthday}}" placeholder="date de naissance" name="birthday">
                     @error('birthday')
                         <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                     @enderror
