@@ -19,6 +19,7 @@ class AboutSeeder extends Seeder
                 "nom" => "Smith",
                 "prenom" => "Alex",
                 "titre" => "UI/UX Designer & Web Developer",
+                "image" => "profile-img.jpg",
                 "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore
                 magna aliqua.",

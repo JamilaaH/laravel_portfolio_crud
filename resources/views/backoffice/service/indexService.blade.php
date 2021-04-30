@@ -1,7 +1,6 @@
-@extends('layouts.index')
+@extends('layouts.indexAdmin')
 
 @section('content')
-@include('partial.bo.navAdmin')
 <section id="service">
     <h3 class="text-center mb-3">Service</h3>
     <div class="container">

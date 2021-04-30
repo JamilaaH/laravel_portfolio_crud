@@ -18,6 +18,7 @@ class CreateAboutTable extends Migration
             $table->string('nom', 100);
             $table->string('prenom', 100);
             $table->string('titre', 100);
+            $table->string('image', 100);
             $table->string('description', 200);
             $table->date('birthday');
             $table->string('website', 100);

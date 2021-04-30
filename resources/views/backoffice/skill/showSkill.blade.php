@@ -1,9 +1,8 @@
-@extends('layouts.index')
+@extends('layouts.indexAdmin')
 
 @include('layouts.flash')
 @section('content')
-    @include('partial.bo.navAdmin')
-    <div class="container">
+@include('partial.bo.nav')    <div class="container">
         <h3 class="text-center">Details</h3>
         <a href={{route('admin.index')}}>Back admin</a>
         <div class="card">

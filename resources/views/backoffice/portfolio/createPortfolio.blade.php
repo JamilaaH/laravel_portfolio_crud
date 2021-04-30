@@ -1,8 +1,7 @@
-@extends('layouts.index')
+@extends('layouts.indexAdmin')
 
 @include('layouts.flash')
 @section('content')
-    @include('partial.bo.navAdmin')
     <div class="container">
         <h3 class="text-center">Ajouter un nv projet</h3>
         <a href={{route('admin.index')}} class="text-center">Back admin</a>
@@ -23,7 +22,6 @@
                     <option value="web">Web</option>
                     <option value="app">App</option>
                 </select>
-                {{-- <input type="text" class="form-control  @error('filter') is-invalid @enderror" id="filter" value="{{ old('filter') }}" name="filter"> --}}
                 @error('filter')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror

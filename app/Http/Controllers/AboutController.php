@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
@@ -78,8 +79,16 @@ class AboutController extends Controller
             "email"=>["required", "email"],
             "statut"=>["required"],
         ]);
-        
         $about = $id;
+        
+        //champ input
+        if ($request->image != null) {
+            // Storage::disk('public')->delete('img/'. $id->image);
+            $request->file('image')->storePublicly('img/', 'public');
+            $about->image = $request->file('image')->hashName();
+            $about->save();
+        }
+
         $about->nom = $request->nom;
         $about->prenom = $request->prenom;
         $about->titre = $request->titre;
@@ -93,7 +102,7 @@ class AboutController extends Controller
         $about->email = $request->email;
         $about->statut = $request->statut;
         $about->save();
-        return redirect()->route('about.index');
+        return redirect()->route('admin.index');
     }
 
     //show

@@ -1,12 +1,10 @@
-@extends('layouts.index')
+@extends('layouts.indexAdmin')
 
 @include('layouts.flash')
 @section('content')
-    @include('partial.bo.navAdmin')
-    <div class="container">
-        <h3 class="text-center">Modifier {{$about->nom}}</h3>
-        <a href={{route('about.index')}} class="text-center">Back About</a>
-        <form action={{route('about.update', $about->id)}} method="post" class="w-75 mx-auto">
+<div class="container mt-5">
+        <h3 class="text-center">Modifier le profil</h3>
+        <form action={{route('about.update', $about->id)}} method="post"  enctype="multipart/form-data" class="w-75 mx-auto" >
             @csrf
             @method('PUT')
             <div class="row">
@@ -104,6 +102,15 @@
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
 
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <img src={{asset('img/'.$about->image)}} alt="photo" class="w-100">
+                </div>
+                <div class="col-4">
+                    <h5>Changer de photo</h5>
+                    <input type="file" class="form-control-file" name ="image">
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Valider</button>
         </form>

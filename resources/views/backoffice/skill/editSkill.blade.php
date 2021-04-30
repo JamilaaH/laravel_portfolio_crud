@@ -1,8 +1,7 @@
-@extends('layouts.index')
+@extends('layouts.indexAdmin')
 
 @include('layouts.flash')
 @section('content')
-    @include('partial.bo.navAdmin')
     <div class="container">
         <h3 class="text-center">Modifier {{$skill->nom}}</h3>
         <a href={{route('skill.index')}}>Back Skills</a>
