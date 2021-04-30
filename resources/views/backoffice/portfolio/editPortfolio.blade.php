@@ -24,7 +24,6 @@
                     <option value="app">App</option>
                 </select>
 
-                {{-- <input type="text" class="form-control  @error('filter') is-invalid @enderror" id="filter" value="{{$portfolio->filter}}" name="filter"> --}}
                 @error('filter')
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
