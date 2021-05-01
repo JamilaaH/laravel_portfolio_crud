@@ -4,7 +4,6 @@
 @section('content')
     <div class="container">
         <h3 class="text-center">Modifier {{$portfolio->nom}}</h3>
-        <a href={{route('portfolio.index')}}>Back Portfolio</a>
         <form action={{route('portfolio.update', $portfolio->id)}} method="post" class="w-75 mx-auto"  enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -32,7 +31,7 @@
                 <input type="file" name="nom" id="nom" class="form-control-file">
                 {{-- <input type="text" class="form-control  @error('lien') is-invalid @enderror" id="lien" value="{{$portfolio->lien}}" name="lien"> --}}
             </div>
-            <img src={{asset('img/portfolio/'.$portfolio->nom)}} alt="" class="w-50">
+            <img src={{asset('img/portfolio/'.$portfolio->nom)}} alt="portfolio" class="w-50">
             <button type="submit" class="btn btn-primary">Valider</button>
         </form>
     </div>

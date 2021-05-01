@@ -4,7 +4,6 @@
 @section('content')
     <div class="container">
         <h3 class="text-center">Modifier {{$service->nom}}</h3>
-        <a href={{route('service.index')}}>Back Service</a>
 
         <form action={{route('service.update', $service->id)}} method="post" class="w-75 mx-auto">
             @csrf

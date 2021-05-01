@@ -4,7 +4,6 @@
     <section id="mail">
         <h3 class="text-center mb-3">Mail</h3>
         <div class="container">
-            <a href={{route('admin.index')}}>Back Dashboard</a>
             <table class="table">
                 <thead>
                     <tr>

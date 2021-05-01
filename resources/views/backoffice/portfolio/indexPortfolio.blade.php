@@ -5,7 +5,7 @@
         <h3 class="text-center mb-3">Portfolio</h3>
         <div class="container">
             @include('layouts.flash')
-            <a href={{route('portfolio.create')}} class="btn btn-primary">Ajouter un nv projet</a>
+            <a href={{route('portfolio.create')}} class="btn btn-primary mb-1">Ajouter un nv projet</a>
             <table class="table">
                 <thead>
                     <tr>

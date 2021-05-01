@@ -26,7 +26,7 @@
     <header id="header-admin">
         @include('partial.bo.nav')
     </header>
-    <div id="main">
+    <div id="main" class="mt-5">
         @yield('content')
 
     </div>

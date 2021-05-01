@@ -4,7 +4,6 @@
 @section('content')
     <div class="container">
         <h3 class="text-center">Ajouter un nv skill</h3>
-        <a href={{route('admin.index')}} class="text-center">Back admin</a>
         <form action={{ route('skill.store') }} method="post" class="w-75 mx-auto">
             @csrf
             <div class="form-group">

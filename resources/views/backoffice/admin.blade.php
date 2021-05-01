@@ -2,7 +2,7 @@
 
 @section('content')
         <div class="container">
-                <h2>About</h2>
+                <h2>Votre profil Utilisateur</h2>
                 <div class="row">
                 @foreach ($about as $item)
                         <div class="col-4">

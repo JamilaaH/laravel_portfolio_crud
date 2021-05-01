@@ -4,7 +4,6 @@
 @section('content')
     <div class="container">
         <h3 class="text-center">Modifier {{$skill->nom}}</h3>
-        <a href={{route('skill.index')}}>Back Skills</a>
         <form action={{route('skill.update', $skill->id)}} method="post" class="w-75 mx-auto">
             @csrf
             @method('PUT')

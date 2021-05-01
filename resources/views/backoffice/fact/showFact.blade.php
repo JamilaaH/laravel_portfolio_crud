@@ -4,7 +4,6 @@
 @section('content')
     <div class="container">
         <h3 class="text-center">Details</h3>
-        <a href={{route('admin.index')}}>Back admin</a>
         <div class="card">
             <div class="card-header">
                 <h3 class="text-center">Show </h3>

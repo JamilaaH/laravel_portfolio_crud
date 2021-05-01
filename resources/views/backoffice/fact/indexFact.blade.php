@@ -5,7 +5,7 @@
         <h3 class="text-center mb-3">Facts</h3>
         <div class="container">
         @include('layouts.flash')
-            <a href={{route('admin.index')}}>Back Dashboard</a>
+        <a href={{route('fact.create')}} class="btn btn-primary mb-1">Ajouter un nv fait</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -36,7 +36,6 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href={{route('fact.create')}} class="btn btn-primary">Ajouter un nv fait</a>
         </div>
     </section>
 @endsection
