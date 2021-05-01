@@ -28,12 +28,11 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="lien">Lien de l'image</label>
-                <input type="text" class="form-control  @error('lien') is-invalid @enderror" id="lien" value="{{$portfolio->lien}}" name="lien">
-                @error('lien')
-                    <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
-                @enderror
+                <label for="nom">Nom de l'image</label>
+                <input type="file" name="nom" id="nom" class="form-control-file">
+                {{-- <input type="text" class="form-control  @error('lien') is-invalid @enderror" id="lien" value="{{$portfolio->lien}}" name="lien"> --}}
             </div>
+            <img src={{asset('img/portfolio/'.$portfolio->nom)}} alt="" class="w-50">
             <button type="submit" class="btn btn-primary">Valider</button>
         </form>
     </div>

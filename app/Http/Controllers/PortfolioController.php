@@ -53,14 +53,20 @@ class PortfolioController extends Controller
         //champs obligatoire
         request()->validate([
             "filter"=>["required"],
-            "lien"=>["required"],
+            "nom"=>["required"],
             "titre"=>["required"],
         ]);
+        $portfolio = $id;
+        if ($request->nom != null) {
+            // Storage::disk('public')->delete('img/'. $id->nom);
+            $request->file('nom')->storePublicly('img/portfolio', 'public');
+            $portfolio->nom = $request->file('nom')->hashName();
+            $portfolio->save();
+        }
+
 
         //mettre dans la db
-        $portfolio = $id;
         $portfolio->filter = $request->filter;
-        $portfolio->lien = $request->lien;
         $portfolio->titre = $request->titre;
         $portfolio->save();
         return redirect()->route('portfolio.index')->with('success', 'projet bien édité');
