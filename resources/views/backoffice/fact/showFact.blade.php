@@ -12,6 +12,7 @@
                 <p><span class="font-weight-light">Compteur : </span>{{$fact->count}}</p>
                 <p><span class="font-weight-light"> Description : </span>{{$fact->description}}</p>
                 <p><span class="font-weight-light">Lien de l'icone : </span>{{$fact->icon}}</p>
+                <p><i class={{$fact->icon}}></i></p>
             </div>
             <div class="card-footer d-flex">
                 <a href={{route('fact.edit', $fact->id)}} class="btn btn-primary mx-1">edit</a>

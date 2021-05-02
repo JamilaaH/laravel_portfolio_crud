@@ -11,7 +11,7 @@
             <div class="card-body">
                 <p><span class="font-weight-light">Titre : </span>{{$service->titre}}</p>
                 <p><span class="font-weight-light"> Description : </span>{{$service->description}}</p>
-                <p><span class="font-weight-light">Lien de l'icone : </span>{{$service->icon}}</p>
+                <p><span class="font-weight-light">Lien de l'icone : </span><i class={{$service->icon}}></i> {{$service->icon}}</p>
             </div>
             <div class="card-footer d-flex">
                 <a href={{route('service.edit', $service->id)}} class="btn btn-primary mx-1">edit</a>

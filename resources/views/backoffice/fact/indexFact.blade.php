@@ -22,7 +22,7 @@
                             <th scope="row">{{$item->id}}</th>
                             <td>{{$item->count}}</td>
                             <td>{{$item->description}}</td>
-                            <td>{{$item->icon}}</td>
+                            <td> <i class={{$item->icon}}></i> {{$item->icon}}</td>
                             <td>
                                 <a href={{route('fact.edit', $item->id)}} class="btn btn-primary mb-1">edit</a>
                                 <a href={{route('fact.show', $item->id)}} class="btn btn-success mb-1">show</a>

@@ -20,7 +20,7 @@
                         <tr>
                             <th scope="row">{{$item->id}}</th>
                             <td>{{$item->titre}}</td>
-                            <td>{{$item->value}}</td>
+                            <td>{{$item->value}}%</td>
                             <td>
                                 <a href={{route('skill.edit', $item->id)}} class="btn btn-primary mb-1">edit</a>
                                 <a href={{route('skill.show', $item->id)}} class="btn btn-success mb-1">show</a>
