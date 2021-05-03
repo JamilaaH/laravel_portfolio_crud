@@ -57,7 +57,7 @@ class AboutController extends Controller
         $about->email = $request->email;
         $about->statut = $request->statut;
         $about->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.index')->with('success', 'profil mis à jour');
     }
 
 }

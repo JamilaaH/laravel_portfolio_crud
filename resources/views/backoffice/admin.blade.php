@@ -23,36 +23,34 @@
                                         <div class="card-body">
                                                 <div class="row">
                                                         <div class="col-6">
-                                                                <div class="card bg-light mb-2">
+                                                                <div class="card bg-light my-2 ">
                                                                         <p><span class="font-weight-bold">Date de naissance</span> : {{$item->birthday}} </p>
                                                                 </div>
-                                                                <div class="card bg-light">
+                                                                <div class="card bg-light my-2 ">
                                                                         <p><span class="font-weight-bold">Site web</span> : {{$item->website}} </p>
                                                                 </div>
                                                         </div>
                                                         <div class="col-6">
-                                                                <div class="card bg-light mb-2">
+                                                                <div class="card bg-light my-2 ">
                                                                         <p><span class="font-weight-bold">Téléphone</span> : {{$item->phone}} </p>
                                                                 </div>
-                                                                <div class="card bg-light mb-2">
+                                                                <div class="card bg-light my-2 ">
                                                                         <p><span class="font-weight-bold">City</span> : {{$item->city}} </p>
                                                                 </div>
                                                         </div>
-                                                </div>
-                                                <div class="row mb-2">
                                                         <div class="col-6">
-                                                                <div class="card bg-light mb-2">
+                                                                <div class="card bg-light my-2 ">
                                                                         <p><span class="font-weight-bold">Age</span> : {{$item->age}} </p>
                                                                 </div>
-                                                                <div class="card bg-light mb-2">
+                                                                <div class="card bg-light my-2">
                                                                         <p><span class="font-weight-bold">Degree</span> : {{$item->degree}} </p>
                                                                 </div>
                                                         </div>
                                                         <div class="col-6">
-                                                                <div class="card bg-light mb-2">
+                                                                <div class="card bg-light my-2">
                                                                         <p><span class="font-weight-bold">Email</span> : {{$item->email}} </p>
                                                                 </div>
-                                                                <div class="card bg-light mb-2">
+                                                                <div class="card bg-light my-2">
                                                                         <p><span class="font-weight-bold">Statut</span> : {{$item->statut}} </p>
                                                                 </div>
                                                         </div>

@@ -23,7 +23,7 @@ class AboutSeeder extends Seeder
                 "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore
                 magna aliqua.",
-                "birthday" => Carbon::create('1995', '05', '01'),
+                "birthday" => '1995-05-01',
                 "website" => "www.example.com",
                 "phone" => 1234567890,
                 "city" => "New York, USA",
@@ -33,5 +33,7 @@ class AboutSeeder extends Seeder
                 "statut" => "Available",
                 "created_at" => now(),                
         ]);
+
+
     }
 }

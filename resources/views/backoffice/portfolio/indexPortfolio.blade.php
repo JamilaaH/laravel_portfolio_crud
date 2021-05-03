@@ -19,7 +19,8 @@
                 <tbody>
                     @foreach ($portfolios as $item)
                         <tr>
-                            <th scope="row">{{$item->id}}</th>
+                            {{-- <th scope="row">{{$item->id}}</th> --}}
+                            <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$item->titre}}</td>
                             <td>{{$item->filter}}</td>
                             <td>{{$item->image}}</td>

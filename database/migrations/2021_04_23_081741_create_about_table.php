@@ -20,7 +20,7 @@ class CreateAboutTable extends Migration
             $table->string('titre', 100);
             $table->string('image', 100);
             $table->string('description', 200);
-            $table->date('birthday');
+            $table->date('birthday')->format('d-m-Y');
             $table->string('website', 100);
             $table->integer('phone');
             $table->string('city', 100);
@@ -29,6 +29,8 @@ class CreateAboutTable extends Migration
             $table->string('email', 100);
             $table->string('statut', 100);
             $table->timestamps();
+
+
         });
     }
 

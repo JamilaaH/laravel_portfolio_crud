@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
 {
@@ -40,6 +41,8 @@ class PortfolioController extends Controller
     //delete
     public function destroy(Portfolio $id){
         $id->delete();
+        $portfolio = $id;
+        Storage::delete('img/portfolio/'. $portfolio->image);
         return redirect()->route('portfolio.index')->with('warning', "un élément supprimé");
     }
 
@@ -58,7 +61,7 @@ class PortfolioController extends Controller
         ]);
         $portfolio = $id;
         if ($request->image != null) {
-            // Storage::disk('public')->delete('img/'. $id->image);
+            Storage::disk('public')->delete('img/portfolio/'. $id->image);
             $request->file('image')->storePublicly('img/portfolio', 'public');
             $portfolio->image = $request->file('image')->hashName();
             $portfolio->save();
