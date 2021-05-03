@@ -28,19 +28,11 @@ Route::get('/admin', [HomeController::class, "admin"])->name('admin.index');
 
 //about
 Route::get('/admin/about/', [AboutController::class, "index"])->name('about.index');
-    //create
-Route::get('/admin/about/create', [AboutController::class, "create"])->name('about.create');
-Route::post('/admin/about/store', [AboutController::class, "store"])->name('about.store');
-
-    //delete
-Route::delete('/admin/about/{id}/delete',[AboutController::class, "destroy"])->name('about.destroy');
 
     //edit - update
 Route::get('/admin/about/{id}/edit', [AboutController::class, 'edit'])->name('about.edit');
 Route::put('/admin/about/{id}/update', [AboutController::class, 'update'])->name('about.update');
 
-    //show
-Route::get('/admin/about/{id}', [AboutController::class, "show"])->name('about.show');
 
 //fact
 Route::get('/admin/fact/', [FactController::class, "index"])->name('fact.index');

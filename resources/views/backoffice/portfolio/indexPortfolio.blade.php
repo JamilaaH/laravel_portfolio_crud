@@ -22,7 +22,7 @@
                             <th scope="row">{{$item->id}}</th>
                             <td>{{$item->titre}}</td>
                             <td>{{$item->filter}}</td>
-                            <td>{{$item->nom}}</td>
+                            <td>{{$item->image}}</td>
                             <td>
                                 <a href={{route('portfolio.edit', $item->id)}} class="btn btn-primary mb-1">edit</a>
                                 <a href={{route('portfolio.show', $item->id)}} class="btn btn-success mb-1">show</a>

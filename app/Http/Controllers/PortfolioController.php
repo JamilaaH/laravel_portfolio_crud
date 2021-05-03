@@ -20,14 +20,14 @@ class PortfolioController extends Controller
         //champs obligatoire
         request()->validate([
             "filter"=>["required"],
-            "nom"=>["required"],
+            "image"=>["required", "image", 'mimes:jpeg,png,jpg', "max:2048"],
             "titre"=>["required"],
         ]);
         
         $portfolio = new Portfolio();
         //storage
-        $request->file('nom')->storePublicly('img/portfolio', 'public');
-        $portfolio->nom = $request->file('nom')->hashName();
+        $request->file('image')->storePublicly('img/portfolio', 'public');
+        $portfolio->image = $request->file('image')->hashName();
 
 
         //mettre dans la db
@@ -53,14 +53,14 @@ class PortfolioController extends Controller
         //champs obligatoire
         request()->validate([
             "filter"=>["required"],
-            "nom"=>["required"],
+            "image"=>["required", "image", 'mimes:jpeg,png,jpg', "max:2048"],
             "titre"=>["required"],
         ]);
         $portfolio = $id;
-        if ($request->nom != null) {
-            // Storage::disk('public')->delete('img/'. $id->nom);
-            $request->file('nom')->storePublicly('img/portfolio', 'public');
-            $portfolio->nom = $request->file('nom')->hashName();
+        if ($request->image != null) {
+            // Storage::disk('public')->delete('img/'. $id->image);
+            $request->file('image')->storePublicly('img/portfolio', 'public');
+            $portfolio->image = $request->file('image')->hashName();
             $portfolio->save();
         }
 

@@ -3,7 +3,7 @@
 @include('layouts.flash')
 @section('content')
     <div class="container">
-        <h3 class="text-center">Ajouter un nv fait</h3>
+        <h3 class="text-center">Ajouter un nv service</h3>
         <form action={{ route('service.store') }} method="post" class="w-75 mx-auto">
             @csrf
             <div class="form-group">
